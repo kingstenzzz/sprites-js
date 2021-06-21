@@ -150,8 +150,8 @@ automatically, placing the output into the `./out/contracts.json` file.
 
 * [Paywall](examples/paywall/)
 
-##修改bug
-1.添加缺失的require
-2.https://github.com/kingstenzzz/sprites-js/blob/abb01686af76c0075212c973f06658ef5bf9864d/examples/paywall/publisher.js#L91 .toBuffer->Buffer.from
-##现在的bug
-1.deposit刷新页面
+##修改bug//
+1.添加缺失的require//
+2.https://github.com/kingstenzzz/sprites-js/blob/abb01686af76c0075212c973f06658ef5bf9864d/examples/paywall/publisher.js#L91 .toBuffer->Buffer.from//
+##现在的bug//
+1.deposit刷新页面//
