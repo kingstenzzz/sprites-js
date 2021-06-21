@@ -16,9 +16,10 @@ folders.
 
 Prerequisite on both macOS and Linux:
 - [Nix 2.0](https://nixos.org/nix/) package manager
-安装命令：sh <(curl -L https://nixos.org/nix/install) --daemon  
 
 ```
+
+sh <(curl -L https://nixos.org/nix/install) --daemon  //安装nix命令  
 git clone https://github.com/enumatech/sprites
 cd sprites/
 nix-shell
