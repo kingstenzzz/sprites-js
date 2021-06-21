@@ -115,11 +115,11 @@ const Reader = {
     }),
 
     deposit: curry(async (amount, rdr) => {
-        const {sprites} = rdr
+        const {publisher,sprites} = rdr
         return {
             ...rdr,
             sprites: await threadP(sprites,
-                Sprites.deposit(amount),
+                Sprites.deposit(publisher,amount),
                 Sprites.channelState,
                 Sprites.save)
         }

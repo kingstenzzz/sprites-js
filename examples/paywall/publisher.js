@@ -88,7 +88,7 @@ const Publisher = {
     }),
 
     receiptData({articleId, chId}) {
-        return Buffer.concat([toBuffer(articleId), toUnsigned(new BN(chId))])
+        return Buffer.concat([Buffer.from(articleId), toUnsigned(new BN(chId))])
     },
 
     receiptSig: curry(async (unsignedReceipt, publisher) => {

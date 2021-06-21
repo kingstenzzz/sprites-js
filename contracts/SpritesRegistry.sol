@@ -27,7 +27,7 @@ contract SpritesRegistry {
 
     struct Payment {
         uint amount;
-        uint expiry;
+        uint expiry;//time
         address recipient;
         bytes32 preimageHash;
     }
@@ -67,7 +67,7 @@ contract SpritesRegistry {
         pm = PreimageManagerInterface(preimageManagerAddress);
         channelCounter = 0;
     }
-
+    //create channel,other is the other participant
     function create(address other, address tokenAddress)
     public
     returns (uint chId) {

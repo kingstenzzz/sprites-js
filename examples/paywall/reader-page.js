@@ -45,7 +45,7 @@ let reader, catalog, library, article
  * Actions
  * */
 async function openChannel() {
-    const amount = 30
+    const amount = 50
     reader = await threadP(reader,
         Reader.approve(amount),
         Reader.firstDeposit(amount))
@@ -55,7 +55,8 @@ async function openChannel() {
 async function deposit(amount) {
     reader = await threadP(reader,
         Reader.approve(amount),
-        Reader.deposit(amount))
+        Reader.firstDeposit(amount)
+        )
     render()
 }
 
@@ -170,6 +171,7 @@ const Debug = ({reader, library, route = {}}) => {
     const depositLabel = label({for: 'deposit'}, ' tokens ')
     const onDeposit = () => deposit(parseInt(depositField.value))
 
+
     return div({class: 'debug'},
         h3('IDs of purchased articles'),
         pre(inspect(keys(library))),
@@ -178,8 +180,7 @@ const Debug = ({reader, library, route = {}}) => {
         button({onclick: () => publisherWithdraw()}, 'Publisher withdraw'),
         button({onclick: () => readerWithdraw()}, 'Reader withdraw'),
         form(
-            button({onclick: onDeposit}, 'Deposit'),
-            depositField, depositLabel))
+            button({onclick: onDeposit}, 'Deposit_Test'),depositField, depositLabel))
 }
 
 const Views = (route) => {

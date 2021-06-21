@@ -32,13 +32,14 @@ function makeJsonFetch(fetch) {
             headers: {'Content-Type': 'application/json', ...headers},
             body: JSON.stringify(body)
         }
-
+	        console.log(jsonOpts)
         const response = await fetch(urlWithQueryString, jsonOpts)
+
         const result = await response.json()
 
         if (response.ok) {
             if (has('message', result) && has('stack', result))
-                throw new Error('[SERVER] ' + result.message)
+                throw new Error('[SERVER]' + result.message)
             else
                 return result
         } else {
